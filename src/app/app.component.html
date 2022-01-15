@@ -1,0 +1,136 @@
+
+<button (click)='getData()'>Get all records </button>
+<!--target element-->
+<!-- <div id="target">Right click / Touch hold to open the ContextMenu</div> -->
+<div id="target"><ejs-grid [dataSource]='data | async' [editSettings]='editSettings' [toolbar]='toolbar' (dataSourceChanged)='dataSourceChanged($event)' (dataStateChange)= 'dataStateChange($event)'>
+  <e-columns>
+    <e-column
+    field="id"
+    headerText="Task ID"
+    width="120"
+    textAlign="Right"
+    isPrimaryKey="true"
+    type="number"
+    ></e-column>
+    <e-column field="TaskName" headerText="Task Name" width="225"></e-column>
+    <e-column
+    field="StartDate"
+    headerText="Start Date"
+    width="150"
+    format="yMd"
+    type="datetime"
+    editType="datepickeredit"
+    ></e-column>
+    <e-column
+   field="EndDate"
+   headerText="End Date"
+   width="150"
+   format="yMd"
+   type="datetime"
+   editType="datepickeredit"
+   ></e-column>
+   <e-column
+   field="Duration"
+   headerText="Duration"
+   type="number"
+   textAlign="Right"
+   width="130"
+   editType="numericedit"
+ ></e-column>
+ <e-column
+ field="Progress"
+ headerText="Progress"
+ type="number"
+ textAlign="Right"
+   width="130"
+   editType="numericedit"
+   ></e-column>
+   <e-column
+   field="ParentID"
+   headerText="Parent ID"
+   type="number"
+   textAlign="Right"
+   width="130"
+   editType="numericedit"
+   ></e-column><e-column
+   field="isParent"
+   headerText="Is Parent"
+   type="number"
+   textAlign="Right"
+   width="130"
+   editType="boolean"
+   ></e-column> </e-columns
+   >
+  </ejs-grid> </div>
+  <!-- To Render ContextMenu. -->
+  <ejs-contextmenu id='contextmenu' target='#target' [items]= 'menuItems' (select)="itemSelect($event)"></ejs-contextmenu>
+  
+<!-- <ejs-treegrid #treegrid [dataSource]='data' [enableVirtualization]=true height=291 childMapping='Crew' [treeColumnIndex]='1' >
+  <e-columns>
+      <e-column field='TaskID' headerText='Player Jersey' width='120' textAlign='Right'></e-column>
+      <e-column field='FIELD1' headerText='Player Name' width='120'></e-column>
+      <e-column field='FIELD2' headerText='Year' width='100' textAlign='Right'></e-column>
+      <e-column field='FIELD3' headerText='Stint' width='120' textAlign='Right'></e-column>
+      <e-column field='FIELD4' headerText='TMID' width='120' textAlign='Right'></e-column>
+  </e-columns>
+</ejs-treegrid> -->
+<!-- <ejs-grid [dataSource]='data | async' [editSettings]='editSettings' [toolbar]='toolbar' (dataSourceChanged)='dataSourceChanged($event)' (dataStateChange)= 'dataStateChange($event)'>
+     <e-columns>
+    <e-column
+      field="id"
+      headerText="Task ID"
+      width="120"
+      textAlign="Right"
+      isPrimaryKey="true"
+      type="number"
+    ></e-column>
+    <e-column field="TaskName" headerText="Task Name" width="225"></e-column>
+    <e-column
+      field="StartDate"
+      headerText="Start Date"
+      width="150"
+      format="yMd"
+      type="datetime"
+      editType="datepickeredit"
+    ></e-column>
+    <e-column
+      field="EndDate"
+      headerText="End Date"
+      width="150"
+      format="yMd"
+      type="datetime"
+      editType="datepickeredit"
+    ></e-column>
+    <e-column
+      field="Duration"
+      headerText="Duration"
+      type="number"
+      textAlign="Right"
+      width="130"
+      editType="numericedit"
+    ></e-column>
+    <e-column
+      field="Progress"
+      headerText="Progress"
+      type="number"
+      textAlign="Right"
+      width="130"
+      editType="numericedit"
+    ></e-column>
+    <e-column
+      field="ParentID"
+      headerText="Parent ID"
+      type="number"
+      textAlign="Right"
+      width="130"
+      editType="numericedit"
+    ></e-column><e-column
+    field="isParent"
+    headerText="Is Parent"
+    type="number"
+    textAlign="Right"
+    width="130"
+    editType="boolean"
+  ></e-column> </e-columns
+>
+</ejs-grid>  -->
